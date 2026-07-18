@@ -1,0 +1,24 @@
+schema_version = "1.0.0"
+
+# Example of manifest file for a Blender extension
+# Change the values according to your extension
+id = "Auto_Reference_Image_Adder"
+version = "1.0.0"
+name = "Auto Reference Image Adder"
+tagline = "Automatically adds reference image/s to selected axis"
+maintainer = "Jere Tolonen"
+# Supported types: "add-on", "theme"
+type = "add-on"
+
+website = "https://github.com/VisualPlate/autoReference"
+
+blender_version_min = "4.2.0"
+
+license = [
+  "SPDX:GPL-3.0-or-later",
+]
+
+platforms = ["windows-x64", "macos-arm64", "linux-x64"]
+
+# [permissions]
+files = "Imports reference images from the filesystem"
