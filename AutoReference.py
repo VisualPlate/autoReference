@@ -16,19 +16,32 @@ from bpy_extras.io_utils import ImportHelper
 from bpy.props import StringProperty
 
 #BASE SETTINGS
-OFFSET_DIST = 15.0
-SCALE_AMOUNT = {
+reference_offset = 15.0
+reference_scale = {
     'x': 1.0,
     'y': 1.0,
     'z': 1.0
 }
-AXIS_CONFIG = {
-    'FRONT':  ((math.radians(90), 0, 0),               (0, -OFFSET_DIST, 0)),
-    'BACK':   ((math.radians(90), 0, math.radians(180)), (0, OFFSET_DIST, 0)),
-    'LEFT':   ((math.radians(90), 0, math.radians(-90)), (-OFFSET_DIST, 0, 0)),
-    'RIGHT':  ((math.radians(90), 0, math.radians(90)),  (OFFSET_DIST, 0, 0)),
-    'TOP':    ((0, 0, 0),                                (0, 0, OFFSET_DIST)),
-    'BOTTOM': ((math.radians(180), 0, 0),                (0, 0, -OFFSET_DIST)),
+
+#AXIS SETTINGS. includes rotation and location, but shouldn't be changed for correct transforms
+axis_config = {
+    'FRONT':    ((math.radians(90), 0, 0),
+                (0, -reference_offset, 0)),
+
+    'BACK':     ((math.radians(90), 0, math.radians(180)),
+                (0, reference_offset, 0)),
+
+    'LEFT':     ((math.radians(90), 0, math.radians(-90)),
+                (-reference_offset, 0, 0)),
+
+    'RIGHT':    ((math.radians(90), 0, math.radians(90)),
+                (reference_offset, 0, 0)),
+
+    'TOP':      ((0, 0, 0),
+                (0, 0, reference_offset)),
+
+    'BOTTOM':   ((math.radians(180), 0, 0),
+                (0, 0, -reference_offset)),
 }
 
 #---------- REFERENCE IMAGE CREATION ----------
@@ -51,11 +64,11 @@ def create_reference_image_empty(context, filepath, axis='BOTTOM'):
     context.scene.collection.objects.link(empty)
 
     # Setting transforms -> rotation, location, scale etc. based on the axis chosen
-    rot, loc = AXIS_CONFIG.get(axis.upper(), ((0, 0, 0), (0, 0, 0)))
+    rot, loc = axis_config.get(axis.upper(), ((0, 0, 0), (0, 0, 0)))
     empty.rotation_euler = rot
     empty.location = loc
-    empty.empty_display_size = OFFSET_DIST #auto size
-    empty.scale = (SCALE_AMOUNT['x'], SCALE_AMOUNT['y'], SCALE_AMOUNT['z'])
+    empty.empty_display_size = reference_offset #auto size
+    empty.scale = (reference_scale['x'], reference_scale['y'], reference_scale['z'])
 
 
     return empty
