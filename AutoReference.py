@@ -49,7 +49,7 @@ def create_reference_image_empty(context, filepath, axis='BOTTOM'):
     #Add the empty (reference image) to the scene collection
     context.scene.collection.objects.link(empty)
 
-    # SET TRANSFORM: rotation, location, scale etc. based on the axis chosen
+    # Setting transforms -> rotation, location, scale etc. based on the axis chosen
     rot, loc = AXIS_CONFIG.get(axis.upper(), ((0, 0, 0), (0, 0, 0)))
     empty.rotation_euler = rot
     empty.location = loc
@@ -70,6 +70,7 @@ class OBJECT_OT_reference_image_file_browser(bpy.types.Operator, ImportHelper):
     bl_label = "Select Reference Image"
     bl_options = {'REGISTER', 'UNDO'}
 
+    #allowed image files types
     filter_glob: StringProperty(
         default='*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.bmp;*.exr',
         options={'HIDDEN'},
@@ -83,7 +84,7 @@ class OBJECT_OT_reference_image_file_browser(bpy.types.Operator, ImportHelper):
 
         ref_obj = create_reference_image_empty(context, self.filepath, axis=self.axis)
 
-        # Make it the active/selected object like a normal add operator would
+        #Deselect all and select the newly created reference image empty, set it as active
         bpy.ops.object.select_all(action='DESELECT')
         ref_obj.select_set(True)
         context.view_layer.objects.active = ref_obj
