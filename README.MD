@@ -4,7 +4,8 @@ Blender extension that inserts reference images automatically into scene collect
 ### Installation  
 1. Download .ZIP file of this project on github (main branch)
 2. Open Blender (version 4.2.0 or above),  
-go to "Edit"-> "Preferences" -> "Get Extensions" -> "Install From Disk" -> Choose the .Zip File (autoReference-main.zip)
+go to "Edit"-> "Preferences" -> "Get Extensions" -> "Install From Disk" -> Choose the .Zip File (autoReference-main.zip)  
+![Installation Image]()
 
 #### Notes
 Do not unzip the .Zip, it wont work otherwise. Blender Extensions need .Zip file to attach them correctly into them
@@ -12,7 +13,8 @@ Do not unzip the .Zip, it wont work otherwise. Blender Extensions need .Zip file
 ### Usage
 
 1. Install the Extension and make sure you have version 4.2.0 or later
-2. Click on "Add" -> "Image" -> "Add reference Image -> location" -> Select the position you want the image to be in. 
+2. Click on "Add" -> "Image" -> "Add reference Image -> location" -> Select the position you want the image to be in.  
+![Usage Image]()
 
 ### Features
 Automatise and safe time on adding reference images  
