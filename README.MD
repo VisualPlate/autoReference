@@ -4,7 +4,8 @@ Blender extension that inserts reference images automatically into scene collect
 ### Installation  
 1. Download .ZIP file of this project on github (main branch)
 2. Open Blender (version 4.2.0 or above),  
-go to "Edit"-> "Preferences" -> "Get Extensions" -> "Install From Disk" -> Choose the .Zip File (autoReference-main.zip)  
+go to "Edit"-> "Preferences" -> "Get Extensions" -> "Install From Disk" -> Choose the .Zip File (autoReference-main.zip) 
+ 
 ![Installation Image](https://github.com/VisualPlate/autoReference/blob/main/install.webp?raw=true)
 
 #### Notes
@@ -14,6 +15,7 @@ Do not unzip the .Zip, it wont work if you do so. Blender Extensions need .Zip f
 
 1. Install the Extension and make sure you have version 4.2.0 or later
 2. Click on "Add" -> "Image" -> "Add reference Image -> location" -> Select the position you want the image to be in.  
+
 ![Usage Image](https://github.com/VisualPlate/autoReference/blob/main/usage.webp?raw=true)
 
 ### Features
@@ -45,5 +47,5 @@ reference_scale['z']
 ### For Developers on linux
 In cases you need to edit this script for your own purposes you can unzip the autoReference-main.zip file, edit the needed files and test a specific python file inside blender by running command like this
 ```bash
-blender --python "file-path/Autoreference.py"
+blender --python "file-path/AutoReference.py"
 ```
