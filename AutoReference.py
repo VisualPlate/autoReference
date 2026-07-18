@@ -15,7 +15,7 @@ bl_info = {
 }
 
 #BASE SETTINGS
-OFFSET_DIST = 3.0
+OFFSET_DIST = 15.0
 SCALE_AMOUNT = {
     'x': 1.0,
     'y': 1.0,
