@@ -9,7 +9,7 @@ go to "Edit"-> "Preferences" -> "Get Extensions" -> "Install From Disk" -> Choos
 ![Installation Image](https://github.com/VisualPlate/autoReference/blob/main/install.webp?raw=true)
 
 #### Notes
-Do not unzip the .Zip, it wont work if you do so. Blender Extensions need .Zip file to attach them correctly into them
+Do not unzip the .Zip, it wont work if you do so. Blender Extensions need .Zip file to attach them correctly into them. You can still unpack, remove the image files and pack it again
 
 ### Usage
 
